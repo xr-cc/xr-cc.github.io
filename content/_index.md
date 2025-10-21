@@ -41,17 +41,17 @@ sections:
   - block: collection
     id: papers
     content:
-      title: Featured Publications
+      title: Featured Projects
       filters:
         folders:
-          - publications
+          - projects
         featured_only: true
     design:
       view: article-grid
       columns: 2
   - block: collection
     content:
-      title: Recent Publications
+      title: Publications
       text: ''
       filters:
         folders:
@@ -62,7 +62,7 @@ sections:
   - block: collection
     id: pres
     content:
-      title: Recent & Upcoming Presentations
+      title: Presentations
       filters:
         folders:
           - events

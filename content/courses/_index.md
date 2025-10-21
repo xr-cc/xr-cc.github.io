@@ -1,6 +1,6 @@
 ---
-title: Courses
-summary: My courses
+title: Courses and Workshops
+summary: My courses and workshops
 type: landing
 
 cascade:
@@ -24,5 +24,5 @@ sections:
       show_read_time: false
       show_date: false
       show_read_more: false
-      columns: 1
+      columns: 2
 ---

@@ -1,10 +1,10 @@
 ---
-title: "Extracting hierarchical features of cultural variation using network-based clustering"
+title: "*Clumppling*: cluster matching and permutation program with integer linear programming"
 authors:
 - xliu
+- Naama M Kopelman
 - Noah A Rosenberg
-- Gili Greenbaum
-date: "2022-01-01"
+date: "2024-01-01"
 
 # Schedule page publish date (NOT publication's date).
 publishDate: "2017-01-01T00:00:00Z"
@@ -15,22 +15,23 @@ publishDate: "2017-01-01T00:00:00Z"
 publication_types: ["article-journal"]
 
 # Publication name and optional abbreviated publication name.
-publication: "*Evolutionary Human Sciences*(4)"
+publication: "*Bioinformatics*(40)"
 publication_short: ""
 
-abstract: "High-dimensional datasets on cultural characters contribute to uncovering insights about factors that influence cultural evolution. Because cultural variation in part reflects descent processes with a hierarchical structure – including the descent of populations and vertical transmission of cultural traits – methods designed for hierarchically structured data have potential to find applications in the analysis of cultural variation. We adapt a network-based hierarchical clustering method for use in analysing cultural variation. Given a set of entities, the method constructs a similarity network, hierarchically depicting community structure among them. We illustrate the approach using four datasets: pronunciation variation in the US mid-Atlantic region, folklore variation in worldwide cultures, phonemic variation across worldwide languages and temporal variation in first names in the US. In these examples, the method provides insights into processes that affect cultural variation, uncovering geographic and other influences on observed patterns and cultural characters that make important contributions to them."
+abstract: "In the mixed-membership unsupervised clustering analyses commonly used in population genetics, multiple replicate data analyses can differ in their clustering solutions. Combinatorial algorithms assist in aligning clustering outputs from multiple replicates so that clustering solutions can be interpreted and combined across replicates. Although several algorithms have been introduced, challenges exist in achieving optimal alignments and performing alignments in reasonable computation time. We present *Clumppling*, a method for aligning replicate solutions in mixed-membership unsupervised clustering. The method uses integer linear programming for finding optimal alignments, embedding the cluster alignment problem in standard combinatorial optimization frameworks. In example analyses, we find that it achieves solutions with preferred values of a desired objective function relative to those achieved by *Pong* and that it proceeds with less computation time than *Clumpak*. It is also the first method to permit alignments across replicates with multiple arbitrary values of the number of clusters K."
 
 # # Summary. An optional shortened abstract.
 # summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
 
 tags:
-- Cultural Evolution
+- Population Structure
 - Clustering
-featured: false
+- Clustering Alignment
+featured: true
 
 hugoblox:
   ids:
-    arxiv: 10.1017/ehs.2022.15
+    doi: 10.1093/bioinformatics/btad751
 
 # links:
 #   - type: pdf
@@ -53,7 +54,7 @@ hugoblox:
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
 image:
-  caption: 'Figure from Liu et al. 2022'
+  caption: 'Figure from Liu et al. 2024'
   focal_point: ""
   preview_only: false
 

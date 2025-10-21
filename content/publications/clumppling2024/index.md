@@ -1,5 +1,5 @@
 ---
-title: "*Clumppling*: cluster matching and permutation program with integer linear programming"
+title: "Clumppling: cluster matching and permutation program with integer linear programming"
 authors:
 - xliu
 - Naama M Kopelman
@@ -24,9 +24,7 @@ abstract: "In the mixed-membership unsupervised clustering analyses commonly use
 # summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
 
 tags:
-- Population Structure
-- Clustering
-- Clustering Alignment
+- Population Structure, Clustering, Clustering Alignment
 featured: true
 
 hugoblox:

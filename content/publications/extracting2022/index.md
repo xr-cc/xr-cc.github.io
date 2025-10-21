@@ -24,8 +24,7 @@ abstract: "High-dimensional datasets on cultural characters contribute to uncove
 # summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
 
 tags:
-- Cultural Evolution
-- Clustering
+- Cultural Evolution, Clustering
 featured: false
 
 hugoblox:

@@ -9,7 +9,7 @@ authors:
   - Lorin Crawford
   - Sohini Ramachandran
 
-date: '2025'
+date: '2025-01-01'
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2017-01-01T00:00:00Z'

@@ -4,7 +4,7 @@ authors:
 - xliu
 - Noah A Rosenberg
 - Gili Greenbaum
-date: "2022"
+date: "2022-01-01"
 
 # Schedule page publish date (NOT publication's date).
 publishDate: "2017-01-01T00:00:00Z"

@@ -60,12 +60,12 @@ sections:
     design:
       view: citation
   - block: collection
-    id: talks
+    id: pres
     content:
-      title: Recent Presentations
+      title: Recent & Upcoming Presentations
       filters:
         folders:
-          - presentations
+          - events
     design:
       view: card
 ---

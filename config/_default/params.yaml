@@ -8,6 +8,10 @@ appearance:
   mode: system
   color: indigo
 
+# Site icon
+icon:
+  path: 'assets/media/icons/icon.png'
+
 # SEO
 marketing:
   seo:

@@ -19,7 +19,9 @@ links:
     url: https://github.com/xr-cc/CME292
 ---
 
-This is a short to introduce advanced MATLAB features, syntaxes, and toolboxes not traditionally found in introductory courses, with applications drawn from various topics from scientific computing.
+This is a short to introduce advanced MATLAB features, syntaxes, and toolboxes not traditionally found in introductory courses, with applications drawn from various topics from scientific computing. 
+
+Check out course materials on [GitHub](https://github.com/xr-cc/CME292) or [MATLAB File Exchange](https://www.mathworks.com/matlabcentral/fileexchange/106675-advanced-matlab-for-scientific-computing).
 
 <!--more-->
 

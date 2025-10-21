@@ -8,10 +8,6 @@ appearance:
   mode: system
   color: indigo
 
-# Site icon
-icon:
-  path: 'assets/media/icons/icon.png'
-
 # SEO
 marketing:
   seo:
@@ -39,6 +35,7 @@ header:
     show_search: true
     show_theme_chooser: true
     logo:
+      icon: 'assets/media/icon.png'
       text: 'Xiran Liu'
 
 # Site footer

@@ -6,6 +6,8 @@ links:
     url: https://github.com/ramachandran-lab/ML-MAGES
 tags:
   - Genetic Association, Complex Traits, Machine Learning
+reading_time: false
+show_date: false
 ---
 
 A machine learning framework for multivariate genetic association analyses with genes and effect size shrinkage 

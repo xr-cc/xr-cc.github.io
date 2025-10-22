@@ -7,6 +7,8 @@ links:
 tags:
   - Population Structure, Clustering, Clustering Alignment
 featured: true
+reading_time: false
+show_date: true
 ---
 
 A framework for aligning multiple clustering results for population structure analyses via optimization and graph-based clustering.

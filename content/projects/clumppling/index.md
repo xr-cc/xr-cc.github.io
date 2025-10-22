@@ -5,7 +5,7 @@ links:
   - type: site
     url: https://github.com/PopGenClustering/Clumppling
 tags:
-  - Population Structure, Clustering, Clustering Alignment, Tool
+  - Population Structure, Clustering, Clustering Alignment
 featured: true
 ---
 

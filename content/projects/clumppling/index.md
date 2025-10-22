@@ -6,6 +6,7 @@ links:
     url: https://github.com/PopGenClustering/Clumppling
 tags:
   - Population Structure, Clustering, Clustering Alignment, Tool
+featured: true
 ---
 
 A framework for aligning multiple clustering results for population structure analyses via optimization and graph-based clustering.

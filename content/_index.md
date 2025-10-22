@@ -47,7 +47,7 @@ sections:
           - projects
         featured_only: true
     design:
-      view: card
+      view: article-grid
       columns: 2
   - block: collection
     content:
@@ -67,6 +67,6 @@ sections:
         folders:
           - events
     design:
-      view: card
+      view: article-grid
       columns: 2
 ---

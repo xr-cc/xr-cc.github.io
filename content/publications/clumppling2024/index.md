@@ -2,8 +2,8 @@
 title: "Clumppling: cluster matching and permutation program with integer linear programming"
 authors:
 - xliu
-- Naama M Kopelman
-- Noah A Rosenberg
+- Naama Kopelman
+- Noah Rosenberg
 date: "2024-01-01"
 
 # Schedule page publish date (NOT publication's date).

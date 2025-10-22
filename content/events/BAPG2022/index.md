@@ -1,13 +1,13 @@
 ---
-title: "ML-MAGES: A machine learning framework for multivariate genetic association analyses with genes and effect size shrinkage"
+title: "A Dirichlet model of alignment cost in mixed-membership clustering results of ancestry inference."
 
-event: RECOMB 2025
+event: Bay Area Population Genomics Conference (BAPG) 2025
 
-location: Seoul, Korea
+location: Berkeley, CA, USA
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: '2025-04-01'
+date: '2022-10-01'
 # date_end: '2030-06-01T15:00:00Z'
 all_day: false
 
@@ -35,6 +35,6 @@ slides: ""
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects:
-  - mlmages
+  - example
 ---
 

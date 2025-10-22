@@ -3,7 +3,7 @@ title: "Combinatorics of a dissimilarity measure for pairs of draws from discret
 authors:
 - Zarif Ahsan
 - xliu
-- Noah A Rosenberg
+- Noah Rosenberg
 date: "2024-01-01"
 
 # Schedule page publish date (NOT publication's date).

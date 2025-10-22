@@ -2,7 +2,7 @@
 title: "Extracting hierarchical features of cultural variation using network-based clustering"
 authors:
 - xliu
-- Noah A Rosenberg
+- Noah Rosenberg
 - Gili Greenbaum
 date: "2022-01-01"
 

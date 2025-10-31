@@ -1,7 +1,7 @@
 ---
 title: "Combinatorics of a dissimilarity measure for pairs of draws from discrete probability vectors on finite sets of objects"
 collection: publications
-category: manuscripts
+category: preprints
 permalink: /publication/combinatorics2025
 date: 2025-01-01
 venue: 'arXiv'

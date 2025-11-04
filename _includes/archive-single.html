@@ -41,15 +41,25 @@
         {% if post.collection == 'teaching' %}
           <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif post.collection == 'publications' %}
-          {%- assign me = post.me | default: site.me | default: "Xiran Liu" -%}
-          {%- assign me_aliases = post.me_aliases | default: site.me_aliases | default: empty -%}
           {%- if post.authors -%}
+            <p>DEBUG: me={{ me }} | me_aliases={{ aliases | jsonify }} | authors={{ item.authors | jsonify }}</p>
             <p>Authors: </p>
-            {%- for a in post.authors -%}
-              {%- assign is_me = (a == me) -%}
-              {%- if is_me == false and me_aliases -%}
-                {%- for alt in me_aliases -%}
-                  {%- if a == alt -%}{% assign is_me = true %}{% break %}{% endif -%}
+            {%- assign item = post | default: page -%}
+            {%- assign me = item.me | default: site.me | default: "" -%}
+            {%- assign me_n = me | strip | downcase -%}
+
+            {%- assign aliases = item.me_aliases | default: site.me_aliases -%}
+            {%- if aliases and aliases.first == nil -%}{% assign aliases = nil %}{% endif -%}
+
+            {%- for a in item.authors -%}
+              {%- assign an = a | strip | downcase -%}
+              {%- assign is_me = false -%}
+              {%- if me_n != "" and an == me_n -%}
+                {%- assign is_me = true -%}
+              {%- elsif aliases -%}
+                {%- for alt in aliases -%}
+                  {%- assign alt_n = alt | strip | downcase -%}
+                  {%- if alt_n != "" and an == alt_n -%}{% assign is_me = true %}{% break %}{% endif -%}
                 {%- endfor -%}
               {%- endif -%}
               <span class="author{% if is_me %} me{% endif %}">{{ a }}</span>{% unless forloop.last %}, {% endunless %}

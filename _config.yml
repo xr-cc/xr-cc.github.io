@@ -358,3 +358,7 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+
+me: "Xiran Liu"
+me_aliases: ["Liu, X.", "X. Liu"]

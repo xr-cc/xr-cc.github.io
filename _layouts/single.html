@@ -36,8 +36,28 @@ layout: default
         
         {% if page.collection == 'teaching' %}
           <p> {{ page.type }}, <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
-        {% elsif page.venue and page.date %}
-          <p>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
+        {% elsif page.authors and page.venue and page.date %}
+          {%- assign item = page | default: page -%}
+          {%- assign me = item.me | default: site.me | default: "" -%}
+          {%- assign me_n = me | strip | downcase -%}
+
+          {%- assign aliases = item.me_aliases | default: site.me_aliases -%}
+          {%- if aliases and aliases.first == nil -%}{% assign aliases = nil %}{% endif -%}
+
+          {%- for a in item.authors -%}
+            {%- assign an = a | strip | downcase -%}
+            {%- assign is_me = false -%}
+            {%- if me_n != "" and an == me_n -%}
+              {%- assign is_me = true -%}
+            {%- elsif aliases -%}
+              {%- for alt in aliases -%}
+                {%- assign alt_n = alt | strip | downcase -%}
+                {%- if alt_n != "" and an == alt_n -%}{% assign is_me = true %}{% break %}{% endif -%}
+              {%- endfor -%}
+            {%- endif -%}
+            <span class="author{% if is_me %} me{% endif %}">{{ a }}</span>{% unless forloop.last %}, {% endunless %}
+          {%- endfor -%}
+          <p><i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif page.date %}
           <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
         {% endif %}    

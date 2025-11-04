@@ -111,7 +111,7 @@ for row, item in publications.iterrows():
     ## Markdown description for individual page
 
     if len(str(item.doi)) > 5:
-        md += "\n\n<a href='https://doi.org/" + item.doi + "'>DOI</a>\n"
+        md += "\n\n<a href='https://doi.org/" + item.doi + "'>DOI:" + item.doi + "</a>\n"
 
     if len(str(item.paper_url)) > 5:
         md += "\n\n<a href='" + item.paper_url + "'>Download paper here</a>\n" 
@@ -119,7 +119,7 @@ for row, item in publications.iterrows():
     if len(str(item.excerpt)) > 5:
         md += "\n" + html_escape(item.excerpt) + "\n"
         
-    md += "\nRecommended citation: " + item.citation
+    # md += "\nRecommended citation: " + item.citation
     
     md_filename = os.path.basename(md_filename)
        

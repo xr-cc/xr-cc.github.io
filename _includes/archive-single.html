@@ -42,16 +42,17 @@
           <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif post.collection == 'publications' %}
           {%- if post.authors -%}
-            <p>DEBUG: me={{ me }} | me_aliases={{ aliases | jsonify }} | authors={{ item.authors | jsonify }}</p>
-            <p>Authors: </p>
             {%- assign item = post | default: page -%}
+            {%- assign authors = item.authors | default: empty -%}
+            {%- assign n = authors | size -%}
+
             {%- assign me = item.me | default: site.me | default: "" -%}
             {%- assign me_n = me | strip | downcase -%}
-
             {%- assign aliases = item.me_aliases | default: site.me_aliases -%}
             {%- if aliases and aliases.first == nil -%}{% assign aliases = nil %}{% endif -%}
 
-            {%- for a in item.authors -%}
+            {%- comment %} helper to render one author with emphasis {% endcomment -%}
+            {%- macro render_author a -%}
               {%- assign an = a | strip | downcase -%}
               {%- assign is_me = false -%}
               {%- if me_n != "" and an == me_n -%}
@@ -62,8 +63,23 @@
                   {%- if alt_n != "" and an == alt_n -%}{% assign is_me = true %}{% break %}{% endif -%}
                 {%- endfor -%}
               {%- endif -%}
-              <span class="author{% if is_me %} me{% endif %}">{{ a }}</span>{% unless forloop.last %}, {% endunless %}
-            {%- endfor -%}
+              <span class="author{% if is_me %} me{% endif %}">{{ a }}</span>
+            {%- endmacro -%}
+
+            {%- if authors and n > 0 -%}
+              {%- if n <= 7 -%}
+                {%- for a in authors -%}
+                  {{ render_author a }}{% unless forloop.last %}, {% endunless %}
+                {%- endfor -%}
+              {%- else -%}
+                {%- for a in authors limit:6 -%}
+                  {{ render_author a }}{% unless forloop.last %}, {% endunless %}
+                {%- endfor -%}
+                , et al., 
+                {%- assign last = authors | last -%}
+                {{ render_author last }}
+              {%- endif -%}
+            {%- endif -%}
           {%- endif -%}
           <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif post.date %}

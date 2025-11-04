@@ -99,7 +99,7 @@ for row, item in publications.iterrows():
     ## Markdown description for individual page
 
     if len(str(item.doi)) > 5:
-        md += "\n\n<a href=https://doi.org/" + item.doi + ">DOI</a>\n"
+        md += "\n\n<a href='https://doi.org/" + item.doi + "'>DOI</a>\n"
 
     if len(str(item.paper_url)) > 5:
         md += "\n\n<a href='" + item.paper_url + "'>Download paper here</a>\n" 

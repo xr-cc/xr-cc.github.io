@@ -71,9 +71,9 @@ for row, item in publications.iterrows():
     # get authors
     names = [a.strip() for a in str(item["authors"]).split(";")] if item.get("authors") else []
     if names:
-        item["authors"] = names
-    item["me"] = "Xiran Liu"            # or read from env/config once
-    item["me_aliases"] = ["Liu, X.", "X. Liu"]
+        item.authors = names
+    item.me = "Xiran Liu"            # or read from env/config once
+    item.me_aliases = ["Liu, X.", "X. Liu"]
 
     ## YAML variables
     

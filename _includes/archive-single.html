@@ -43,8 +43,8 @@
         {% elsif post.collection == 'publications' %}
           {%- assign me = post.me | default: site.me | default: "Xiran Liu" -%}
           {%- assign me_aliases = post.me_aliases | default: site.me_aliases | default: empty -%}
-
           {%- if post.authors -%}
+            <p>Authors: </p>
             {%- for a in post.authors -%}
               {%- assign is_me = (a == me) -%}
               {%- if is_me == false and me_aliases -%}
@@ -55,7 +55,6 @@
               <span class="author{% if is_me %} me{% endif %}">{{ a }}</span>{% unless forloop.last %}, {% endunless %}
             {%- endfor -%}
           {%- endif -%}
-
           <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif post.date %}
          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>

@@ -11,6 +11,4 @@ authors:
   - nan
 ---
 
-<a href='https://doi.org/10.48550/arXiv.2410.00221'>DOI</a>
-
-Recommended citation: Ahsan, Z., Liu, X., & Rosenberg, N. A. (2024). "Combinatorics of a dissimilarity measure for pairs of draws from discrete probability vectors on finite sets of objects." <i>arXiv preprint</i>.
+<a href='https://doi.org/10.48550/arXiv.2410.00221'>DOI:10.48550/arXiv.2410.00221</a>

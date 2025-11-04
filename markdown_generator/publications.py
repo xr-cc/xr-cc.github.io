@@ -75,6 +75,8 @@ for row, item in publications.iterrows():
     # TODO Update to use the category assigned in the TSV file
     md += """collection: manuscripts"""
     
+    md += "\ncategory: '" + item.category + "'"
+    
     md += """\npermalink: /publication/""" + html_filename
     
     if len(str(item.excerpt)) > 5:
@@ -86,13 +88,19 @@ for row, item in publications.iterrows():
     
     if len(str(item.paper_url)) > 5:
         md += "\npaperurl: '" + item.paper_url + "'"
-    
+
+    if len(str(item.doi)) > 5:
+        md += "\ndoi: '" + item.doi + "'"
+
     md += "\ncitation: '" + html_escape(item.citation) + "'"
     
     md += "\n---"
     
     ## Markdown description for individual page
-    
+
+    if len(str(item.doi)) > 5:
+        md += "\n\n<a href=https://doi.org/" + item.doi + ">DOI</a>\n"
+
     if len(str(item.paper_url)) > 5:
         md += "\n\n<a href='" + item.paper_url + "'>Download paper here</a>\n" 
         

@@ -69,7 +69,7 @@ for row, item in publications.iterrows():
     year = item.pub_date[:4]
 
     # get authors
-    names = [a.strip() for a in item["authors"].split(";")] if item.get("authors") else []
+    names = [a.strip() for a in str(item["authors"]).split(";")] if item.get("authors") else []
     if names:
         item["authors"] = names
     item["me"] = "Xiran Liu"            # or read from env/config once

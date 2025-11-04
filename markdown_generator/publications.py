@@ -67,7 +67,14 @@ for row, item in publications.iterrows():
     md_filename = str(item.pub_date) + "-" + item.url_slug + ".md"
     html_filename = str(item.pub_date) + "-" + item.url_slug
     year = item.pub_date[:4]
-    
+
+    # get authors
+    names = [a.strip() for a in item["authors"].split(";")] if item.get("authors") else []
+    if names:
+        item["authors"] = names
+    item["me"] = "Xiran Liu"            # or read from env/config once
+    item["me_aliases"] = ["Liu, X.", "X. Liu"]
+
     ## YAML variables
     
     md = "---\ntitle: \""   + item.title + '"\n'

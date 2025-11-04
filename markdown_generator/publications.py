@@ -100,6 +100,11 @@ for row, item in publications.iterrows():
         md += "\ndoi: '" + item.doi + "'"
 
     md += "\ncitation: '" + html_escape(item.citation) + "'"
+
+    if names:
+        md += "\nauthors:"
+        for name in item.authors:
+            md += "\n  - " + html_escape(name) + ""
     
     md += "\n---"
     

@@ -7,19 +7,24 @@ redirect_from:
   - /about.html
 ---
 
-Xiran is a Postdoctoral Researcher at the Data Science Institute, Brown University, working with Dr. Sohini Ramachandran. Before that, she received her Ph.D. in Computational and Mathematical Engineering from Stanford University in 2023, where she was supervised by Dr. Noah Rosenberg.
-Her research focuses on population genetics, computational biology, and data science. She develops computational methods to tackle challenges in analyzing complex genetic and genomic datasets, including population genetic structure, cellular heterogeneity in transcriptomic data, and the genetic architecture of complex traits. She is also broadly interested in interdisciplinary work that bridge computational and biological sciences and beyond.
+I am a Postdoctoral Researcher at the Data Science Institute at Brown University, working with Dr. [Sohini Ramachandran](https://webhelper.brown.edu/ramachandran/). Before that, I received my Ph.D. in Computational and Mathematical Engineering from Stanford University in 2023, where I was supervised by Dr. [Noah Rosenberg](https://rosenberglab.stanford.edu/index.html).
+
+My research focuses on method development in population genetics, computational biology, and data science. I use computational techniques, such as machine learning, optimization, network analysis, and statistical inference, to develop methods and measures for analyzing complex genetic and genomic data, including population structure, genetic diversity measures, cellular heterogeneity in transcriptomic data, and the genetic architecture of complex traits.
+I am also broadly interested in interdisciplinary work that bridges data and computational sciences with the biological sciences and beyond.
+
+*I am on the job market this year; if you know of any suitable openings, please feel free to get in touch.*
 
 [Download CV](files/XLiu_CV.pdf)
+
+(Site still under construction 👷🔧🔨)
 
 Research Interests
 -----
 - Data Science
 - Population Genetics
-- Genome Sciences
 - Computational Biology
 - Bioinformatics
-- Evolution
+- Evolutionay Studies
 - Biological and Biomedical Data Analysis
 
-(Xiran is working on polishing this site 👷🔧🔨)
+

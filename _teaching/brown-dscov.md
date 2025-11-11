@@ -4,7 +4,7 @@ collection: teaching
 type: "Instructor for Workshop"
 permalink: /teaching/brown-dscov
 venue: "Brown University, Data Science Institute"
-date: 2022-01-01
+date: 2025-10-31
 location: "Providence, RI"
 ---
 

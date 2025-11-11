@@ -9,7 +9,11 @@ sort_order: descending
 
 {% include base_path %}
 
+{% assign items = site.portfolio | sort: page.sort_by %}
+{% if page.sort_order == "descending" %}
+  {% assign items = items | reverse %}
+{% endif %}
 
-{% for post in site.portfolio %}
-  {% include archive-single.html %}
+{% for post in items %}
+  {% include archive-single.html type=page.entries_layout %}
 {% endfor %}

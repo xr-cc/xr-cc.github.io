@@ -2,7 +2,7 @@
 title: "Ordinary Differential Equations for Engineers (CME 102)"
 collection: teaching
 type: "TA for Undergraduate Course"
-permalink: /teaching/su-cme102
+permalink: /teaching/1-su-cme102
 venue: "Stanford University, Computational and Mathematical Engineering"
 date: 2020-01-01
 location: "Stanford, CA"

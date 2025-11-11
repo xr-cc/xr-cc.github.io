@@ -2,7 +2,7 @@
 title: "Linear Algebra with Application to Engineering Computations (CME 200/ME 300A)"
 collection: teaching
 type: "TA for Graduate Course"
-permalink: /teaching/su-cme200
+permalink: /teaching/2-su-cme200
 venue: "Stanford University, Computational and Mathematical Engineering"
 date: 2020-01-01
 location: "Stanford, CA"

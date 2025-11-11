@@ -5,7 +5,6 @@ excerpt: "I extend the clustering alignment framework to the single-cell analysi
      style='max-width:500px; width:100%; height:auto; display:block; margin:0 auto;'
      loading='lazy'>"
 collection: portfolio
-order: 6
 ---
 
 This project is *in progress*. We’ll release an all-in-one analysis tool soon.  Interested in a pre-beta trial? Please get in touch.

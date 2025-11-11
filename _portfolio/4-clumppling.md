@@ -5,7 +5,6 @@ excerpt: "I tackle cluster misalignment in population structure inference, where
      style='max-width:800px; width:100%; height:auto; display:block; margin:0 auto;'
      loading='lazy'>"
 collection: portfolio
-order: 3
 ---
 
 Check out *Clumppling* [here](https://github.com/PopGenClustering/Clumppling). This is a Python-based tool to perform clustering alignment. It can be installed as a Python package via ``pip install clumppling``.

@@ -3,12 +3,10 @@ layout: archive
 title: "Projects"
 permalink: /portfolio/
 author_profile: true
-sort_by: order        
-sort_order: descending
 ---
 
 {% include base_path %} 
 
-{% for post in site.portfolio %} 
+{% for post in site.portfolio reversed %} 
 {% include archive-single.html %} 
 {% endfor %}

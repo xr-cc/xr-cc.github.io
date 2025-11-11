@@ -5,7 +5,6 @@ excerpt: "I devise methods to analyze genetic association signals and better cha
      style='max-width:600px; width:100%; height:auto; display:block; margin:0 auto;'
      loading='lazy'>"
 collection: portfolio
-order: 5
 ---
 
 Check out *ML-MAGES* [here](https://github.com/ramachandran-lab/ML-MAGES). The repository provides executable code, as well as example data and scripts for running the method. 

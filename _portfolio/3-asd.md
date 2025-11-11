@@ -16,5 +16,5 @@ collection: portfolio
 
 **Related work:** [Paper1]({{ "/publication/2023-12-12-when2023/" | relative_url }}); 
 [Paper2]({{ "/publication/2024-09-30-combinatorics2024/" | relative_url }}); 
-[Paper3]({{ "/publication/2025-06-17-using2025/" | relative_url }}); 
+[Paper3]({{ "/publication/2025-06-17-using2025/" | relative_url }})
 

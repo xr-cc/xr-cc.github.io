@@ -12,3 +12,7 @@ Check out *Clumppling* [here](https://github.com/PopGenClustering/Clumppling). T
 Check out *KAlignedoscope* [here](https://github.com/ramachandran-lab/KAlignedoscope). This is an D3.js-based visualization tool built by *Avery Guo* (undergrad @ Brown) for interactively exploring and displaying aligned population structure analysis results. It can be installed as a Python package via ``pip install kalignedoscope``.
 
 Also see [here](https://github.com/PopGenClustering/popstru-cls-align-vis-workflow) for a tutorial on the comprehensive workflow of performing population structure analysis end-to-end, from raw data preparation to creating publication-quality visualizations, using popular tools like *Structure* or *ADMIXTURE*, as well as our *Clumppling* and *KAlignedoscope* tools.
+
+**Related work:** 
+[Paper1]({{ "/publication/2024-01-01-clumppling2024/" | relative_url }});
+[Paper2]({{ "/publication/2025-12-31-kalignedoscope2025/" | relative_url }})

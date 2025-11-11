@@ -33,10 +33,6 @@ layout: default
         {% if page.modified %}
           <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ page.modified | date: "%Y-%m-%d" }}">{{ page.modified | date: "%B %d, %Y" }}</time></p>
         {% endif %}
-
-        {% if page.excerpt %}
-          <p class="page__lead">{{ page.excerpt | markdownify }}</p>
-        {% endif %}
               
         {% if page.collection == 'teaching' %}
           <p> {{ page.type }}, <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
@@ -67,6 +63,10 @@ layout: default
         {% endif %}    
         </header>
       {% endunless %}
+
+      {% if page.excerpt %}
+        <p class="page__lead">{{ page.excerpt | markdownify }}</p>
+      {% endif %}
 
       <section class="page__content" itemprop="text">
         {{ content }}

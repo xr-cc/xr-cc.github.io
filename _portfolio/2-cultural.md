@@ -13,6 +13,6 @@ excerpt: "<div style='display:flex; gap:1rem; align-items:flex-start; flex-wrap:
 collection: portfolio
 ---
 
-**Related work:** [Paper1]({{ "/publication/2022-05-02-extracting2022/" | relative_url }}); 
-[Paper2]({{ "/publication/2021-10-01-effects2021/" | relative_url }})
+**Related work:** [Paper1]({{ "/publication/2022-05-02-extracting2022" | relative_url }}); 
+[Paper2]({{ "/publication/2021-10-01-effects2021" | relative_url }})
 

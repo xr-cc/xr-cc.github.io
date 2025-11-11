@@ -10,5 +10,5 @@ collection: portfolio
 Check out *ML-MAGES* [here](https://github.com/ramachandran-lab/ML-MAGES). The repository provides executable code, as well as example data and scripts for running the method. 
 
 **Related work:** 
-[Paper]({{ "/publication/2025-12-31-mlmages2025gr/" | relative_url }});
-[ConferencePaper]({{ "/publication/2025-04-25-mlmages2025/" | relative_url }})
+[Paper]({{ "/publication/2025-12-31-mlmages2025gr" | relative_url }});
+[ConferencePaper]({{ "/publication/2025-04-25-mlmages2025" | relative_url }})

@@ -14,5 +14,6 @@ Check out *KAlignedoscope* [here](https://github.com/ramachandran-lab/KAlignedos
 Also see [here](https://github.com/PopGenClustering/popstru-cls-align-vis-workflow) for a tutorial on the comprehensive workflow of performing population structure analysis end-to-end, from raw data preparation to creating publication-quality visualizations, using popular tools like *Structure* or *ADMIXTURE*, as well as our *Clumppling* and *KAlignedoscope* tools.
 
 **Related work:** 
-[Paper1]({{ "/publication/2024-01-01-clumppling2024" | relative_url }});
-[Paper2]({{ "/publication/2025-12-31-kalignedoscope2025" | relative_url }})
+[Paper1]({{ "/publication/2022-11-10-dirichlet2022" | relative_url }});
+[Paper2]({{ "/publication/2024-01-01-clumppling2024" | relative_url }});
+[Paper3]({{ "/publication/2025-12-31-kalignedoscope2025" | relative_url }})

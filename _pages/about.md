@@ -12,13 +12,11 @@ I am a Postdoctoral Researcher at the Data Science Institute at Brown University
 My research focuses on method development in population genetics, computational biology, and data science. I use computational techniques, such as machine learning, optimization, network analysis, and statistical inference, to develop methods and measures for analyzing complex genetic and genomic data, including population structure, genetic diversity measures, cellular heterogeneity in transcriptomic data, and the genetic architecture of complex traits.
 I am also broadly interested in interdisciplinary work that bridges data and computational sciences with the biological sciences and beyond.
 
-*I am on the job market this year; if you know of any suitable openings, please feel free to get in touch.*
+*I am on job market this year; please feel free to get in touch.*
 
-[Download CV](files/XLiu_CV.pdf)
+[Download CV](files/XLiu_CV.pdf) (*updated Nov 2025*)
 
-(Site still under construction 👷🔧🔨)
-
-Research Interests
+Research interests
 -----
 - Data Science
 - Population Genetics
@@ -27,4 +25,13 @@ Research Interests
 - Evolutionay Studies
 - Biological and Biomedical Data Analysis
 
+(Site still under construction 👷🔧🔨)
+
+Fun facts
+-----
+🧋 I love exploring new boba shops wherever I go.
+
+🧩 I enjoy escape rooms and jigsaw puzzles.
+
+🌳 I like spending time in local parks and on nearby walking trails.
 

@@ -20,7 +20,7 @@ Research Interests
 - Population Genetics
 - Computational Biology
 - Bioinformatics
-- Evolutionay Studies
+- Evolutionary Studies
 - Biological and Biomedical Data Analysis
 
 Updates

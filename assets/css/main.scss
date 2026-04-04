@@ -250,6 +250,8 @@ li {
 .hero-card__body {
   display: grid;
   gap: 0.2rem;
+  width: min(132px, 100%);
+  justify-self: start;
 }
 
 .profile-links {

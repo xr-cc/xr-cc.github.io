@@ -52,6 +52,24 @@ layout: default
   <div class="shell">
     <div class="section-header">
       <div>
+        <p class="eyebrow">News</p>
+      </div>
+    </div>
+
+    <article class="panel">
+      <ul class="news-list">
+        {% for item in profile.announcements %}
+          <li>{{ item.text }}</li>
+        {% endfor %}
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="shell">
+    <div class="section-header">
+      <div>
         <p class="eyebrow">Research overview</p>
       </div>
     </div>
@@ -76,46 +94,27 @@ layout: default
 </section>
 
 <section class="section">
-  <div class="shell lower-grid">
-    <div>
-      <div class="section-header">
-        <div>
-          <p class="eyebrow">Selected work</p>
-        </div>
-      </div>
-
-      <div class="stack">
-        {% assign homepage_publications = selected_publications %}
-        {% if homepage_publications == empty %}
-          {% assign homepage_publications = publications %}
-        {% endif %}
-        {% for item in homepage_publications limit:3 %}
-          <article class="panel">
-            <div class="meta-line">{{ item.date | date: "%Y" }} · {{ item.type }} · {{ item.venue }}</div>
-            <h3>{{ item.title }}</h3>
-            {% if item.authors %}
-              <p>{{ item.authors | split: " | " | join: ", " }}</p>
-            {% endif %}
-          </article>
-        {% endfor %}
+  <div class="shell">
+    <div class="section-header">
+      <div>
+        <p class="eyebrow">Selected work</p>
       </div>
     </div>
 
-    <div>
-      <div class="section-header">
-        <div>
-          <p class="eyebrow">News</p>
-        </div>
-      </div>
-
-      <article class="panel">
-        <div class="meta-line">Recent updates</div>
-        <ul class="news-list">
-          {% for item in profile.announcements %}
-            <li>{{ item.text }}</li>
-          {% endfor %}
-        </ul>
-      </article>
+    <div class="stack">
+      {% assign homepage_publications = selected_publications %}
+      {% if homepage_publications == empty %}
+        {% assign homepage_publications = publications %}
+      {% endif %}
+      {% for item in homepage_publications limit:3 %}
+        <article class="panel">
+          <div class="meta-line">{{ item.date | date: "%Y" }} · {{ item.type }} · {{ item.venue }}</div>
+          <h3>{{ item.title }}</h3>
+          {% if item.authors %}
+            <p>{{ item.authors | split: " | " | join: ", " }}</p>
+          {% endif %}
+        </article>
+      {% endfor %}
     </div>
   </div>
 </section>

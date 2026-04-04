@@ -423,6 +423,38 @@ li {
   margin-top: 0.8rem;
 }
 
+.view-toggle {
+  display: inline-flex;
+  gap: 0.55rem;
+  padding: 0.28rem;
+  margin-bottom: 1rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+}
+
+.view-toggle__button {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 0.52rem 0.95rem;
+  font: inherit;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+
+.view-toggle__button.is-active {
+  background: var(--accent-soft);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.publication-view--hidden {
+  display: none;
+}
+
 .publication__top {
   display: flex;
   justify-content: space-between;
@@ -431,11 +463,11 @@ li {
   margin-bottom: 0.35rem;
 }
 
-.publication-year + .publication-year {
+.publication-group + .publication-group {
   margin-top: 1rem;
 }
 
-.publication-year h2 {
+.publication-group h2 {
   margin-bottom: 0.9rem;
 }
 

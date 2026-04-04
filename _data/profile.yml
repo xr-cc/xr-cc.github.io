@@ -37,10 +37,10 @@ links:
 announcements:
   - date: "2025-11"
     text: "On the academic job market and always happy to connect."
-  - date: "2025-11"
-    text: "Attending Rising Stars in Data Science at Stanford University."
-  - date: "2025-11"
-    text: "Presenting ongoing work on clustering alignment for single-cell analysis at Genome Informatics 2025."
+  - date: "2026-05"
+    text: "Attending Biology of Genome 2025 at CSHL in May."
+  - date: "2026-06"
+    text: "Attending SMTPB 2026 at ICERM, Brown University in June."
 site_note: "This site is still under construction 👷🔧🔨"
 featured_metrics:
   - value: "11"

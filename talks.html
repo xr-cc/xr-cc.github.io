@@ -6,10 +6,19 @@ permalink: /talks/
 <div class="list-block">
   {% for item in talks %}
     <article class="list-block__item">
-      <p class="meta">{{ item.date | date: "%B %Y" }} · {{ item.location }}</p>
-      <h3>{{ item.title }}</h3>
-      <p><strong>{{ item.venue }}</strong></p>
-      <p>{{ item.summary }}</p>
+      <div class="talk-card{% if item.image and item.image != '' %} talk-card--with-image{% endif %}">
+        <div class="talk-card__body">
+          <p class="meta">{{ item.date | date: "%B %Y" }} · {{ item.location }}</p>
+          <h3>{{ item.title }}</h3>
+          <p><strong>{{ item.venue }}</strong></p>
+          <p>{{ item.summary }}</p>
+        </div>
+        {% if item.image and item.image != "" %}
+          <div class="talk-card__media">
+            <img class="talk-card__image" src="{{ item.image | relative_url }}" alt="{{ item.title }}">
+          </div>
+        {% endif %}
+      </div>
     </article>
   {% endfor %}
 </div>

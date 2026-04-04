@@ -425,6 +425,20 @@ li {
   margin-top: 0.8rem;
 }
 
+.entry-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.entry-top__links {
+  margin-top: 0;
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
 .view-toggle {
   display: inline-flex;
   gap: 0.55rem;
@@ -518,6 +532,26 @@ li {
   text-underline-offset: 0.16em;
 }
 
+.talk-card--with-image {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 136px;
+  gap: 1rem;
+  align-items: start;
+}
+
+.talk-card__media {
+  justify-self: end;
+}
+
+.talk-card__image {
+  width: 136px;
+  height: 92px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--ink-soft);
+}
+
 .text-link {
   color: var(--text);
   font-weight: 600;
@@ -567,6 +601,17 @@ li {
     flex-direction: column;
     align-items: start;
     gap: 0.2rem;
+  }
+
+  .entry-top,
+  .talk-card--with-image {
+    grid-template-columns: 1fr;
+    display: grid;
+    align-items: start;
+  }
+
+  .talk-card__media {
+    justify-self: start;
   }
 
   .site-header__toggle {

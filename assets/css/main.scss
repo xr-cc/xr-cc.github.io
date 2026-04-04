@@ -250,6 +250,8 @@ li {
 .hero-card__body {
   display: grid;
   gap: 0.2rem;
+  width: 100%;
+  text-align: center;
 }
 
 .profile-links {
@@ -281,12 +283,12 @@ li {
 
 .hero-card__meta--role {
   color: var(--text);
-  align-self: center;
+  align-self: start;
 }
 
 .hero-card__meta--affiliation {
   color: var(--muted);
-  align-self: center;
+  align-self: start;
 }
 
 .section,

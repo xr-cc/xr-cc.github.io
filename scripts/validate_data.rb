@@ -75,6 +75,16 @@ def validate_publications_table!(project_ids = nil)
       abort("#{PUBLICATIONS_TABLE} row #{index + 2} has invalid ISO date: #{row['date']}")
     end
 
+    authors = row["authors"].to_s.split(" | ").map(&:strip)
+
+    if row["corresponding_authors"] && !row["corresponding_authors"].strip.empty?
+      row["corresponding_authors"].split(" | ").each do |author_name|
+        next if authors.include?(author_name)
+
+        abort("#{PUBLICATIONS_TABLE} row #{index + 2} references unknown corresponding author: #{author_name}")
+      end
+    end
+
     next if project_ids.nil? || row["project_ids"].nil? || row["project_ids"].strip.empty?
 
     row["project_ids"].split(" | ").each do |project_id|

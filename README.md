@@ -43,6 +43,7 @@ This staged redesign keeps the site on Jekyll, but shifts the content model away
 
 - Publication entries are stored in one TSV table. Edit rows manually and set `status` to `published`, `pending`, or `hidden` as needed.
 - Use the `selected` column to control which papers appear in the homepage `Selected work` section.
+- Use `corresponding_authors` in `_data/publications.tsv` to append `*` to corresponding authors on the publications page.
 - Research projects are stored in a second TSV table. Use `project_ids` in publications and `publication_ids` in projects for many-to-many linking.
 - Talks and teaching are also table-driven now, so ongoing updates are simple row edits rather than schema-specific YAML changes.
 - The data files are intended to be the canonical content source for the redesigned site.

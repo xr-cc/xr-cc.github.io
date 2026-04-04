@@ -431,6 +431,24 @@ li {
   margin-bottom: 0.35rem;
 }
 
+.publication-year + .publication-year {
+  margin-top: 1rem;
+}
+
+.publication-year h2 {
+  margin-bottom: 0.9rem;
+}
+
+.publication-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.publication-row + .publication-row {
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+}
+
 .publication__meta {
   display: flex;
   flex-wrap: wrap;
@@ -444,7 +462,7 @@ li {
 }
 
 .publication__authors {
-  margin-bottom: 0;
+  margin-bottom: 0.15rem;
 }
 
 .publication__links {

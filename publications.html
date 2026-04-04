@@ -7,10 +7,11 @@ permalink: /publications/
 {% assign projects = site.data.projects | where: "status", "published" %}
 
 {% for year in grouped %}
-  <h2>{{ year.name }}</h2>
-  <div class="list-block">
-    {% for item in year.items %}
-      <article class="list-block__item">
+  <article class="list-block__item publication-year">
+    <h2>{{ year.name }}</h2>
+    <div class="publication-list">
+      {% for item in year.items %}
+        <section class="publication-row">
         <div class="publication__top">
           <p class="meta publication__meta">
             <span>{{ item.type | upcase }}</span>
@@ -56,7 +57,8 @@ permalink: /publications/
             </ul>
           </div>
         {% endif %}
-      </article>
-    {% endfor %}
-  </div>
+        </section>
+      {% endfor %}
+    </div>
+  </article>
 {% endfor %}

@@ -1,8 +1,6 @@
 ---
 title: "Publications"
 permalink: /publications/
-eyebrow: "Output"
-intro: "Selected articles, conference papers, and preprints. This page is driven by `_data/publications.tsv`, so updates are simple row edits."
 ---
 {% assign publications = site.data.publications | where: "status", "published" | sort: "date" | reverse %}
 {% assign grouped = publications | group_by: "year" %}

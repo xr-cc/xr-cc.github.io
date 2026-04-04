@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Xiran Liu - Clean Scientific Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/academicons.css">
+    <style>
+      :root {
+        --bg: #f6f6f6;
+        --panel: rgba(246, 246, 246, 0.94);
+        --panel-strong: #f6f6f6;
+        --text: #223125;
+        --muted: #5a7164;
+        --line: #d8dde2;
+        --accent: #729969;
+        --accent-soft: rgba(161, 192, 194, 0.24);
+        --ink-soft: #e6e7eb;
+        --shadow: 0 18px 42px rgba(34, 49, 37, 0.08);
+        --radius: 18px;
+        --shell: 1180px;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        color: var(--text);
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        line-height: 1.6;
+        background:
+          linear-gradient(180deg, rgba(161, 192, 194, 0.18), transparent 22%),
+          linear-gradient(90deg, rgba(34, 49, 37, 0.03) 1px, transparent 1px),
+          linear-gradient(rgba(34, 49, 37, 0.03) 1px, transparent 1px),
+          var(--bg);
+        background-size: auto, 36px 36px, 36px 36px, auto;
+      }
+
+      img { display: block; max-width: 100%; }
+
+      a { color: inherit; }
+
+      h1, h2, h3 {
+        margin: 0;
+        line-height: 1.04;
+        font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+        font-weight: 600;
+        letter-spacing: -0.03em;
+      }
+
+      h1 { font-size: clamp(1.45rem, 2.6vw, 2.05rem); }
+      h2 { font-size: clamp(1.5rem, 3vw, 2.3rem); }
+      h3 { font-size: 1.1rem; }
+
+      p, li { color: var(--muted); margin: 0; }
+
+      .shell {
+        width: min(calc(100% - 2rem), var(--shell));
+        margin: 0 auto;
+      }
+
+      .eyebrow {
+        margin-bottom: 0.5rem;
+        font-size: 1.12rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(246, 248, 251, 0.88);
+        backdrop-filter: blur(18px);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .site-header__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 4.8rem;
+        gap: 1rem;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+      }
+
+      .brand__mark {
+        width: 0.7rem;
+        height: 0.7rem;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 8px var(--accent-soft);
+      }
+
+      .brand__text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.05rem;
+      }
+
+      .brand__name {
+        font-size: 0.96rem;
+        font-weight: 600;
+        color: var(--text);
+      }
+
+      .brand__meta {
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+
+      .nav {
+        display: flex;
+        gap: 1.35rem;
+      }
+
+      .nav a {
+        text-decoration: none;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .nav a:first-child {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .hero {
+        padding: 2.75rem 0 1.75rem;
+      }
+
+      .hero__grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.75fr) minmax(250px, 0.78fr);
+        gap: 1.75rem;
+      }
+
+      .hero__copy {
+        max-width: 46rem;
+      }
+
+      .hero__intro {
+        font-size: 1.03rem;
+        color: var(--text);
+      }
+
+      .hero__actions,
+      .meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 2.75rem;
+        padding: 0.7rem 1rem;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 600;
+        border: 1px solid var(--line);
+        background: var(--panel-strong);
+      }
+
+      .button--primary {
+        background: var(--text);
+        color: #f7f7f7;
+        border-color: var(--text);
+      }
+
+      .hero-card,
+      .panel,
+      .metric {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-card {
+        padding: 1.25rem;
+        max-width: 280px;
+        justify-self: end;
+      }
+
+      .hero-card img {
+        border-radius: 50%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        width: min(180px, 100%);
+        margin: 0 auto;
+        border: 1px solid var(--line);
+      }
+
+      .hero-card__body {
+        padding-top: 1rem;
+        display: grid;
+        gap: 0.55rem;
+      }
+
+      .profile-links {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.55rem 0.8rem;
+        margin-top: 0.15rem;
+      }
+
+      .profile-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        text-decoration: none;
+        color: var(--muted);
+        font-size: 0.93rem;
+      }
+
+      .profile-link i {
+        width: 1rem;
+        color: var(--text);
+      }
+
+      .section {
+        padding: 1.4rem 0 2.2rem;
+      }
+
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 1rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .section-note {
+        max-width: 28rem;
+        font-size: 0.94rem;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.15rem;
+      }
+
+      .project {
+        overflow: hidden;
+      }
+
+      .project__image {
+        width: 100%;
+        height: auto;
+        max-height: 260px;
+        object-fit: contain;
+        border-bottom: 1px solid var(--line);
+        background: var(--ink-soft);
+        padding: 0.75rem;
+      }
+
+      .project__body {
+        padding: 1.05rem 1.05rem 1.15rem;
+        display: grid;
+        gap: 0.6rem;
+      }
+
+      .project__kicker {
+        font-size: 0.8rem;
+        color: var(--accent);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      .lower-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+        gap: 1.15rem;
+      }
+
+      .stack {
+        display: grid;
+        gap: 0.95rem;
+      }
+
+      .panel {
+        padding: 1.05rem 1.1rem;
+      }
+
+      .panel h3 {
+        margin-bottom: 0.4rem;
+      }
+
+      .news-list {
+        margin: 0;
+        padding-left: 1.1rem;
+        display: grid;
+        gap: 0.8rem;
+      }
+
+      .news-list li::marker {
+        color: var(--accent);
+      }
+
+      .meta-line {
+        margin-bottom: 0.45rem;
+        color: var(--accent);
+        font-size: 0.84rem;
+        font-weight: 600;
+      }
+
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.75rem;
+        margin-bottom: 1.1rem;
+      }
+
+      .metric {
+        padding: 1rem;
+      }
+
+      .metric strong {
+        display: block;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.7rem;
+        color: var(--text);
+      }
+
+      .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+      }
+
+      .tag {
+        padding: 0.48rem 0.72rem;
+        border-radius: 999px;
+        background: var(--ink-soft);
+        border: 1px solid var(--line);
+        color: var(--text);
+        font-size: 0.92rem;
+      }
+
+      .footer {
+        padding: 2.3rem 0 3rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .misc-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      @media (max-width: 920px) {
+        .site-header__inner,
+        .section-header {
+          align-items: start;
+        }
+
+        .hero__grid,
+        .project-grid,
+        .lower-grid,
+        .misc-grid,
+        .metrics {
+          grid-template-columns: 1fr;
+        }
+
+        .nav {
+          flex-wrap: wrap;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell site-header__inner">
+        <a class="brand" href="#">
+          <span class="brand__mark"></span>
+          <span class="brand__text">
+            <span class="brand__name">Xiran Liu</span>
+            <span class="brand__meta">Computational biology and population genetics</span>
+          </span>
+        </a>
+
+        <nav class="nav">
+          <a href="#">Home</a>
+          <a href="#">Research</a>
+          <a href="#">Publications</a>
+          <a href="#">Talks</a>
+          <a href="#">Teaching</a>
+          <a href="#">More</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="shell hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">About me</p>
+          <p class="hero__intro">
+            I am a Postdoctoral Researcher at the Data Science Institute at <a href="#">Brown University</a>, working with <a href="#">Sohini Ramachandran</a>. Before that, I received my Ph.D. in Computational and Mathematical Engineering from <a href="#">Stanford University</a> in 2023, where I was supervised by <a href="#">Noah Rosenberg</a>.
+          </p>
+          <p class="hero__intro" style="margin-top: 0.85rem;">
+            My research focuses on method development in population genetics, computational biology, and data science. I use computational techniques such as machine learning, optimization, network analysis, and statistical inference to analyze complex genetic and genomic data.
+          </p>
+        </div>
+
+        <aside class="hero-card">
+          <img src="./images/profile.png" alt="Xiran Liu portrait">
+          <div class="hero-card__body">
+            <h3>Xiran Liu</h3>
+            <p>Postdoctoral Researcher</p>
+            <p>Brown University</p>
+            <div class="profile-links">
+              <a class="profile-link" href="#"><i class="fas fa-envelope"></i><span>Contact</span></a>
+              <a class="profile-link" href="#"><i class="fas fa-file-lines"></i><span>CV</span></a>
+              <a class="profile-link" href="#"><i class="ai ai-google-scholar"></i><span>Scholar</span></a>
+              <a class="profile-link" href="#"><i class="ai ai-orcid"></i><span>ORCID</span></a>
+              <a class="profile-link" href="#"><i class="fab fa-github"></i><span>GitHub</span></a>
+              <a class="profile-link" href="#"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Research overview</p>
+          </div>
+        </div>
+
+        <div class="project-grid">
+          <article class="project panel">
+            <img class="project__image" src="./images/projects/clumppling.png" alt="">
+            <div class="project__body">
+              <div class="project__kicker">Methods</div>
+              <h3>Population structure alignment</h3>
+              <p>Tools and theory for aligning latent ancestries across repeated clustering runs and choices of K.</p>
+            </div>
+          </article>
+
+          <article class="project panel">
+            <img class="project__image" src="./images/projects/mlmages.png" alt="">
+            <div class="project__body">
+              <div class="project__kicker">Statistical genetics</div>
+              <h3>Multivariate association analysis</h3>
+              <p>Machine-learning methods for effect-size shrinkage, gene-level aggregation, and pattern discovery.</p>
+            </div>
+          </article>
+
+          <article class="project panel">
+            <img class="project__image" src="./images/projects/clumppling-st.png" alt="">
+            <div class="project__body">
+              <div class="project__kicker">Single-cell analysis</div>
+              <h3>Alignment-aware clustering workflows</h3>
+              <p>Model comparison and cluster interpretation for robust single-cell analysis pipelines.</p>
+            </div>
+          </article>
+
+          <article class="project panel">
+            <img class="project__image" src="./images/projects/asd.png" alt="">
+            <div class="project__body">
+              <div class="project__kicker">Theory</div>
+              <h3>Allele-sharing dissimilarities</h3>
+              <p>Mathematical analysis of interpretable dissimilarity measures in population-genetic settings.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell lower-grid">
+        <div>
+          <div class="section-header">
+          <div>
+            <p class="eyebrow">Selected work</p>
+          </div>
+          </div>
+
+          <div class="stack">
+            <article class="panel">
+              <div class="meta-line">2025 · Journal article · Theoretical Population Biology</div>
+              <h3>Using mathematical constraints to explain narrow ranges for allele-sharing dissimilarities</h3>
+            </article>
+
+            <article class="panel">
+              <div class="meta-line">2025 · Conference paper · RECOMB</div>
+              <h3>ML-MAGES: A Machine Learning Framework for Multivariate Genetic Association Analyses</h3>
+            </article>
+
+            <article class="panel">
+              <div class="meta-line">2024 · Journal article · Bioinformatics</div>
+              <h3>Clumppling: cluster matching and permutation program with integer linear programming</h3>
+            </article>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-header">
+          <div>
+              <p class="eyebrow">News</p>
+            </div>
+          </div>
+
+          <article class="panel">
+            <div class="meta-line">Recent updates</div>
+            <ul class="news-list">
+              <li>On the academic job market and open to conversations about faculty and research opportunities.</li>
+              <li>Presenting ongoing work on clustering alignment for single-cell analysis at Genome Informatics 2025.</li>
+              <li>Attending Rising Stars in Data Science at Stanford University.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="shell">
+        Preview direction: minimal branding, technical typography, structured content, and a cleaner academic-lab feel.
+      </div>
+    </footer>
+  </body>
+  </html>

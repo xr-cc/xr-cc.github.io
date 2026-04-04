@@ -1,0 +1,17 @@
+---
+title: "Talks"
+permalink: /talks/
+eyebrow: "Speaking"
+intro: "Recent invited and conference presentations across population genetics, statistical genetics, and computational biology."
+---
+{% assign talks = site.data.talks | where: "status", "published" | sort: "date" | reverse %}
+<div class="list-block">
+  {% for item in talks %}
+    <article class="list-block__item">
+      <p class="meta">{{ item.date | date: "%B %Y" }} · {{ item.location }}</p>
+      <h3>{{ item.title }}</h3>
+      <p><strong>{{ item.venue }}</strong></p>
+      <p>{{ item.summary }}</p>
+    </article>
+  {% endfor %}
+</div>

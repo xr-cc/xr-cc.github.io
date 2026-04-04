@@ -1,0 +1,18 @@
+---
+title: "Teaching"
+permalink: /teaching/
+eyebrow: "Teaching"
+intro: "A concise record of teaching and workshop contributions."
+---
+<div class="list-block">
+  {% assign teaching = site.data.teaching | where: "status", "published" %}
+  {% for item in teaching %}
+    <article class="list-block__item">
+      <p class="meta">{{ item.years }} · {{ item.location }}</p>
+      <h3>{{ item.title }}</h3>
+      <p><strong>{{ item.type }}</strong></p>
+      <p>{{ item.institution }}</p>
+      <p>{{ item.summary }}</p>
+    </article>
+  {% endfor %}
+</div>

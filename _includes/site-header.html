@@ -1,0 +1,23 @@
+{% assign current_url = page.url | replace: 'index.html', '' %}
+<header class="site-header">
+  <div class="shell site-header__inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand__mark"></span>
+      <span class="brand__text">
+        <span class="brand__name">{{ site.title }}</span>
+        <span class="brand__meta">Computational biology and population genetics</span>
+      </span>
+    </a>
+
+    <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      Menu
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      {% for item in site.data.navigation.main %}
+        {% assign target_url = item.url | replace: 'index.html', '' %}
+        <a class="site-nav__link{% if current_url == target_url %} is-active{% endif %}" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>

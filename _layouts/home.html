@@ -1,0 +1,110 @@
+---
+layout: default
+---
+{% assign profile = site.data.profile %}
+{% assign publications = site.data.publications | where: "status", "published" | sort: "date" | reverse %}
+{% assign selected_publications = publications | where: "selected", "true" %}
+{% assign projects = site.data.projects | where: "status", "published" %}
+
+<section class="hero">
+  <div class="shell hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow">About me</p>
+      {% for paragraph in profile.about %}
+        <p class="hero__intro{% if forloop.index > 1 %} hero__intro--spaced{% endif %}">{{ paragraph }}</p>
+      {% endfor %}
+      {% if profile.site_note %}
+        <p class="hero__note">{{ profile.site_note }}</p>
+      {% endif %}
+    </div>
+
+    <aside class="hero-card">
+      <img class="hero-card__image" src="{{ profile.avatar | relative_url }}" alt="{{ profile.name }}">
+      <div class="hero-card__body">
+        <h3>{{ profile.name }}</h3>
+        <p>{{ profile.role }}</p>
+        <p>{{ profile.affiliation }}</p>
+        <div class="profile-links">
+          {% for link in profile.links %}
+            <a class="profile-link" href="{{ link.url }}">
+              <i class="{{ link.icon }}" aria-hidden="true"></i>
+              <span>{{ link.label }}</span>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section">
+  <div class="shell">
+    <div class="section-header">
+      <div>
+        <p class="eyebrow">Research overview</p>
+      </div>
+    </div>
+
+    <div class="project-grid">
+      {% assign featured_projects = projects | where: "featured", "true" %}
+      {% if featured_projects == empty %}
+        {% assign featured_projects = projects %}
+      {% endif %}
+      {% for project in featured_projects %}
+        <article class="project panel">
+          <img class="project__image" src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+          <div class="project__body">
+            <div class="project__kicker">Research theme</div>
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.summary }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="shell lower-grid">
+    <div>
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">Selected work</p>
+        </div>
+      </div>
+
+      <div class="stack">
+        {% assign homepage_publications = selected_publications %}
+        {% if homepage_publications == empty %}
+          {% assign homepage_publications = publications %}
+        {% endif %}
+        {% for item in homepage_publications limit:3 %}
+          <article class="panel">
+            <div class="meta-line">{{ item.date | date: "%Y" }} · {{ item.type }} · {{ item.venue }}</div>
+            <h3>{{ item.title }}</h3>
+            {% if item.authors %}
+              <p>{{ item.authors | split: " | " | join: ", " }}</p>
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div>
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">News</p>
+        </div>
+      </div>
+
+      <article class="panel">
+        <div class="meta-line">Recent updates</div>
+        <ul class="news-list">
+          {% for item in profile.announcements %}
+            <li>{{ item.text }}</li>
+          {% endfor %}
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>

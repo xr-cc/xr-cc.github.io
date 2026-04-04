@@ -1,0 +1,66 @@
+---
+title: "Projects"
+permalink: /projects/
+eyebrow: "Research"
+intro: "A focused view of the methods, biological questions, and software themes that organize my work."
+---
+<div class="list-block">
+  {% assign projects = site.data.projects | where: "status", "published" %}
+  {% assign publications = site.data.publications | where: "status", "published" | sort: "date" | reverse %}
+  {% for project in projects %}
+    <article class="list-block__item">
+      <div class="split-grid">
+        <div>
+          <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+        </div>
+        <div>
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.summary }}</p>
+
+          {% assign project_details = project.details | split: " | " %}
+          {% if project.details and project.details != "" %}
+            <ul>
+              {% for detail in project_details %}
+                <li>{{ detail }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+          {% if project.status %}
+            <p><strong>Status:</strong> {{ project.status }}</p>
+          {% endif %}
+
+          {% assign project_links = project.links | split: " | " %}
+          {% if project.links and project.links != "" %}
+            <div class="list-block__links">
+              {% for link in project_links %}
+                {% assign pair = link | split: "::" %}
+                <a class="text-link" href="{{ pair[1] }}">{{ pair[0] }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          {% assign related_project_ids = project.publication_ids | split: " | " %}
+          {% assign related_count = 0 %}
+          {% for publication in publications %}
+            {% if related_project_ids contains publication.id %}
+              {% assign related_count = related_count | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+          {% if related_count > 0 %}
+            <div class="related-block">
+              <p class="meta">Related publications</p>
+              <ul class="related-list">
+                {% for publication in publications %}
+                  {% if related_project_ids contains publication.id %}
+                    <li>{{ publication.title }}</li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </article>
+  {% endfor %}
+</div>

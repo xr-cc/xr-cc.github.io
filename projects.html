@@ -10,8 +10,8 @@ permalink: /projects/
     {% assign project = projects | where: "id", project_id | first %}
     {% if project %}
       <article class="list-block__item">
-        <div class="split-grid">
-          <div>
+        <div class="project-list__grid">
+          <div class="project-list__media">
             <img class="project-list__image" src="{{ project.image | relative_url }}" alt="{{ project.title }}">
           </div>
           <div>
@@ -26,8 +26,8 @@ permalink: /projects/
   {% for project in projects %}
     {% unless preferred_order contains project.id %}
       <article class="list-block__item">
-        <div class="split-grid">
-          <div>
+        <div class="project-list__grid">
+          <div class="project-list__media">
             <img class="project-list__image" src="{{ project.image | relative_url }}" alt="{{ project.title }}">
           </div>
           <div>

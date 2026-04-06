@@ -2,63 +2,40 @@
 title: "Projects"
 permalink: /projects/
 ---
+{% assign projects = site.data.projects | where: "status", "published" %}
+{% assign preferred_order = "single-cell-alignment|ml-mages|clumppling" | split: "|" %}
+
 <div class="list-block">
-  {% assign projects = site.data.projects | where: "status", "published" %}
-  {% assign publications = site.data.publications | where: "status", "published" | sort: "date" | reverse %}
+  {% for project_id in preferred_order %}
+    {% assign project = projects | where: "id", project_id | first %}
+    {% if project %}
+      <article class="list-block__item">
+        <div class="split-grid">
+          <div>
+            <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+          </div>
+          <div>
+            <h3><a class="project-title-link" href="{{ '/projects/' | append: project.id | append: '/' | relative_url }}">{{ project.title }}</a></h3>
+            <p>{{ project.summary }}</p>
+          </div>
+        </div>
+      </article>
+    {% endif %}
+  {% endfor %}
+
   {% for project in projects %}
-    <article class="list-block__item">
-      <div class="split-grid">
-        <div>
-          <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+    {% unless preferred_order contains project.id %}
+      <article class="list-block__item">
+        <div class="split-grid">
+          <div>
+            <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+          </div>
+          <div>
+            <h3><a class="project-title-link" href="{{ '/projects/' | append: project.id | append: '/' | relative_url }}">{{ project.title }}</a></h3>
+            <p>{{ project.summary }}</p>
+          </div>
         </div>
-        <div>
-          <h3>{{ project.title }}</h3>
-          <p>{{ project.summary }}</p>
-
-          {% assign project_details = project.details | split: " | " %}
-          {% if project.details and project.details != "" %}
-            <ul>
-              {% for detail in project_details %}
-                <li>{{ detail }}</li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-
-          {% if project.status %}
-            <p><strong>Status:</strong> {{ project.status }}</p>
-          {% endif %}
-
-          {% assign project_links = project.links | split: " | " %}
-          {% if project.links and project.links != "" %}
-            <div class="list-block__links">
-              {% for link in project_links %}
-                {% assign pair = link | split: "::" %}
-                <a class="text-link" href="{{ pair[1] }}">{{ pair[0] }}</a>
-              {% endfor %}
-            </div>
-          {% endif %}
-
-          {% assign related_project_ids = project.publication_ids | split: " | " %}
-          {% assign related_count = 0 %}
-          {% for publication in publications %}
-            {% if related_project_ids contains publication.id %}
-              {% assign related_count = related_count | plus: 1 %}
-            {% endif %}
-          {% endfor %}
-          {% if related_count > 0 %}
-            <div class="related-block">
-              <p class="meta">Related publications</p>
-              <ul class="related-list">
-                {% for publication in publications %}
-                  {% if related_project_ids contains publication.id %}
-                    <li>{{ publication.title }}</li>
-                  {% endif %}
-                {% endfor %}
-              </ul>
-            </div>
-          {% endif %}
-        </div>
-      </div>
-    </article>
+      </article>
+    {% endunless %}
   {% endfor %}
 </div>

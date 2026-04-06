@@ -339,6 +339,15 @@ li {
   gap: 0.6rem;
 }
 
+.project-title-link {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.project-title-link:hover {
+  color: var(--accent);
+}
+
 .project__kicker {
   font-size: 0.8rem;
   color: var(--accent);
@@ -403,6 +412,29 @@ li {
 
 .prose ul {
   padding-left: 1.2rem;
+}
+
+.project-detail__image {
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--ink-soft);
+  padding: 0.9rem;
+}
+
+.project-detail__list {
+  margin-top: 1rem;
+}
+
+.project-detail__links {
+  margin-top: 1rem;
+}
+
+.project-detail__section {
+  margin-top: 1.5rem;
 }
 
 .related-block {

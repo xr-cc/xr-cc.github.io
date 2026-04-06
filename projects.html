@@ -12,7 +12,7 @@ permalink: /projects/
       <article class="list-block__item">
         <div class="split-grid">
           <div>
-            <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+            <img class="project-list__image" src="{{ project.image | relative_url }}" alt="{{ project.title }}">
           </div>
           <div>
             <h3><a class="project-title-link" href="{{ '/projects/' | append: project.id | append: '/' | relative_url }}">{{ project.title }}</a></h3>
@@ -28,7 +28,7 @@ permalink: /projects/
       <article class="list-block__item">
         <div class="split-grid">
           <div>
-            <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+            <img class="project-list__image" src="{{ project.image | relative_url }}" alt="{{ project.title }}">
           </div>
           <div>
             <h3><a class="project-title-link" href="{{ '/projects/' | append: project.id | append: '/' | relative_url }}">{{ project.title }}</a></h3>
